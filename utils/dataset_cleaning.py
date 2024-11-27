@@ -11,10 +11,12 @@ def clean_dataset_one (df) :
     return df_updated
 
 
+# Authored by: Suvedei Soyol-Erdene
 def clean_dataset_two (data) :
     # data formatting / cleaning
     data.drop_duplicates(inplace = True)
     data = data.dropna()
+    data = data.copy()
     data["disease"] = data["hereditary_diseases"] != "NoDisease"
     df_updated = pd.get_dummies(data, columns=['sex', 'disease', 'smoker'], drop_first = True)
     bool_columns = df_updated.select_dtypes(include='bool').columns
