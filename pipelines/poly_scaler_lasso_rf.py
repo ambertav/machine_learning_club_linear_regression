@@ -1,10 +1,10 @@
-
 from sklearn.feature_selection import SelectFromModel
 from sklearn.linear_model import LassoCV
 from sklearn.preprocessing import PolynomialFeatures, StandardScaler
 from sklearn.pipeline import Pipeline
 from sklearn.ensemble import  RandomForestRegressor
 
+# Authored by: Amber Taveras
 def create_model (x_train, y_train, x_test) :
     pipeline_lasso_rf = Pipeline([
         ('poly', PolynomialFeatures(degree = 2, include_bias = False)),
