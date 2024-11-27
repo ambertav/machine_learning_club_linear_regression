@@ -8,8 +8,8 @@ st.markdown('''
 ## Linear Regression: Predicting Insurance Prices
             
 #### Researchers:
-Juan __ \\
-Mahad __ \\
+Juan \\
+Mahad \\
 Jeremy Khusial \\
 Himanshu Sharma \\
 Suvedei Soyol-Erdene \\

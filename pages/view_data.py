@@ -2,21 +2,23 @@ import streamlit as st
 import pandas as pd
 
 from utils.dataset1_cleaning import clean_data
+from utils.correlation_matrix import plot_correlation_matrix
 
 
 def app () :
     df = pd.read_csv('data/insurance_dataset1.csv')
 
     st.header('Analyzing the Data')
-    st.write('Data prior to cleaning:')
+    st.write('Initial dataset format:')
     st.write(df.head())
 
-    df_updated = clean_data(df)
+    df = clean_data(df)
 
+    st.write('Data after processing:')
+    st.write(df.head())
 
-    st.write('Data after to cleaning:')
-    st.write(df_updated.head())
-
-
+    st.write('Correlation matrix:')
+    plot_correlation_matrix(df)
+    
 
     

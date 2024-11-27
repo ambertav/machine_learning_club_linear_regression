@@ -8,7 +8,7 @@ def clean_data (df) :
     bool_columns = df_updated.select_dtypes(include='bool').columns
     df_updated[bool_columns] = df_updated[bool_columns].astype(int)
 
-    return df
+    return df_updated
 
 
 def split_train_and_test (df) :
