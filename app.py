@@ -1,7 +1,14 @@
 import streamlit as st
 
-import streamlit as st
-from pages import view_data
+page = ['Home', 'Data', 'Models']
+
+if page == 'Home':
+    st.query_params(page='home')
+elif page == 'Data':
+    st.query_params(page='data')
+elif page == 'Models':
+    st.query_params(page='models')
+
 
 st.markdown('''
 # Machine Learning Club: Baruch College
@@ -18,9 +25,3 @@ Amber Taveras
 #### Product Manager:
 James Witte-Cook
 ''')
-
-st.sidebar.title('Navigation')
-page = st.sidebar.radio('Go to', ['Home', 'Data', 'Models', 'Prediction'])
-
-if page == 'Data':
-    view_data.app()
