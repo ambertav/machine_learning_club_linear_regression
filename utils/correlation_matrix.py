@@ -2,6 +2,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+@st.cache_data
 def plot_correlation_matrix (df) :
     # constructing and showing plot
     correlation_matrix = df.corr().round(2)

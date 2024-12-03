@@ -18,19 +18,19 @@ x1_train, x1_test, y1_train, y1_test = split_train_and_test(first_df, 'charges')
 
 # Linear Regression
 st.header('Linear Regression')
-y1_pred = linear.create_model(x1_train, y1_train, x1_test)
+y1_pred = linear.create_model_and_predict(x1_train, y1_train, x1_test)
 model_summary(y1_test, y1_pred)
 
 
 # Poly and LassoCV
 st.header('Pipeline with Polynomial Features, LassoCV')
-y1_pred = poly_lasso.create_model(x1_train, y1_train, x1_test)
+y1_pred = poly_lasso.create_model_and_predict(x1_train, y1_train, x1_test)
 model_summary(y1_test, y1_pred)
 
 
 # Poly Scaler LassoCV RF
 st.header('Pipeline with Polynomial Features, StandardScaler, LassoCV, Random Forest')
-y1_pred = poly_scaler_lasso_rf.create_model(x1_train, y1_train, x1_test)
+y1_pred = poly_scaler_lasso_rf.create_model_and_predict(x1_train, y1_train, x1_test, 'dataset_1')
 model_summary(y1_test, y1_pred)
 
 st.header('Second Dataset')
@@ -38,6 +38,6 @@ st.header('Pipeline with Polynomial Features, StandardScaler, LassoCV, Random Fo
 second_df = pd.read_csv('data/insurance_dataset2.csv')
 second_df = clean_dataset_two(second_df)
 x2_train, x2_test, y2_train, y2_test = split_train_and_test(second_df, 'claim')
-y2_pred = poly_scaler_lasso_rf.create_model(x2_train, y2_train, x2_test)
+y2_pred = poly_scaler_lasso_rf.create_model_and_predict(x2_train, y2_train, x2_test, 'dataset_2')
 model_summary(y2_test, y2_pred)
 

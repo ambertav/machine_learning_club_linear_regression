@@ -15,13 +15,13 @@ st.markdown('''
 ## Linear Regression: Predicting Insurance Prices
             
 #### Researchers:
-Juan \\
-Mahad \\
+Mahad Ahmed \\
+Juan Balbuena \\
 Jeremy Khusial \\
 Himanshu Sharma \\
 Suvedei Soyol-Erdene \\
 Amber Taveras 
             
 #### Product Manager:
-James Witte-Cook
+James Cook
 ''')

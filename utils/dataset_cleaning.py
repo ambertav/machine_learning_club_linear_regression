@@ -1,8 +1,10 @@
+import streamlit as st
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
+@st.cache_data
 def clean_dataset_one (df) :
-    df.drop_duplicates(inplace = True)
+    df_updated = df.drop_duplicates()
 
     df_updated = pd.get_dummies(df, columns=['sex', 'smoker', 'region'], drop_first = True)
     bool_columns = df_updated.select_dtypes(include='bool').columns
@@ -11,10 +13,11 @@ def clean_dataset_one (df) :
     return df_updated
 
 
+@st.cache_data
 # Authored by: Suvedei Soyol-Erdene
 def clean_dataset_two (data) :
     # data formatting / cleaning
-    data.drop_duplicates(inplace = True)
+    data = data.drop_duplicates()
     data = data.dropna()
     data = data.copy()
     data["disease"] = data["hereditary_diseases"] != "NoDisease"
