@@ -12,7 +12,7 @@ def model_summary(y_test, y_pred):
 
   st.write(f'Mean Squared Error: {mse:.2f}')
   st.write(f'Root Mean Squared Error: {rmse:.2f}')
-  st.write(f'R-squared: {r2:.2f}')
+  st.write(f'R-squared: {r2:.4f}')
 
   assessing_model(y_test, y_pred)
 
